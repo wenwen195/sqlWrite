@@ -9,7 +9,6 @@ public class sqlWrite {
         String addjar="add jar\n" +
                 "    /root/esri-git/gis-tools-for-hadoop/samples/lib/esri-geometry-api.jar\n" +
                 "    /root/esri-git/gis-tools-for-hadoop/samples/lib/spatial-sdk-hadoop.jar;\n" +
-                
                 "create temporary function ST_Point as 'com.esri.hadoop.hive.ST_Point';\n" +
                 "create temporary function ST_Contains as 'com.esri.hadoop.hive.ST_Contains';\n" +
                 "create temporary function ST_Bin as 'com.esri.hadoop.hive.ST_Bin';\n" +
@@ -78,9 +77,7 @@ public class sqlWrite {
                         timeEn=year+"-"+String.format("%02d",month)+"-"+String.format("%02d",day)+" "+String.format("%02d",hour+1)+":00:00";
                     }
                     String timeDiv="CREATE TABLE "+timeTb+"(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);\n" +
-                            
                             "describe "+timeTb+";\n" +
-                            
                             "FROM (SELECT carId,receiveTime,longitude,latitude FROM "+taxiTb+" WHERE "+taxiTb+".receiveTime > '"+timeBg+"') taxish150401s\n" +
                             "INSERT OVERWRITE TABLE "+timeTb+
                             "\nSELECT *\n" +
@@ -145,13 +142,13 @@ public class sqlWrite {
                             
                             "INSERT OVERWRITE TABLE "+stOdTb+
                             "\nSELECT Octcx,Octcy,Dctcx,Dctcy,count FROM "+stOdFTb+
-                            "WHERE count>0;\n" +
+                            "\nWHERE count>0;\n" +
                             
                             "drop table "+stMaxTb+";\n" +
                             "drop table "+stMinTb+";\n" +
                             "drop table "+stOdFTb+";\n";
                     String odVInsert="FROM "+stOdTb+
-                            "INSERT INTO TABLE "+taxiVPTb+
+                            "\nINSERT INTO TABLE "+taxiVPTb+
                             "\nSELECT \"STOD\",\"185\",MIN(count),MAX(count);\n\n";
 
 //                    System.out.println(stOD);
@@ -170,12 +167,12 @@ public class sqlWrite {
                             "INSERT OVERWRITE TABLE "+stOTb+
                             "\nSELECT OctOBJECTID,SUM(count)\n" +
                             "FROM "+stOdPTb+
-                            "GROUP BY OctOBJECTID,Octcx,Octcy;\n" +
+                            "\nGROUP BY OctOBJECTID,Octcx,Octcy;\n" +
                             
                             "INSERT OVERWRITE TABLE "+stDTb+
                             "\nSELECT DctOBJECTID,SUM(count)\n" +
                             "FROM "+stOdPTb+
-                            "GROUP BY DctOBJECTID,Dctcx,Dctcy;\n" +
+                            "\nGROUP BY DctOBJECTID,Dctcx,Dctcy;\n" +
                             
                             "CREATE TABLE "+stTpTb+"(area BINARY,tpcount DOUBLE)\n" +
                             "ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              \n" +
@@ -191,7 +188,7 @@ public class sqlWrite {
                             "drop table "+stDTb+";\n" +
                             "drop table "+stOdPTb+";\n";
                     String stTpVInsert="FROM "+stTpTb+
-                            "INSERT INTO TABLE "+taxiVPTb+
+                            "\nINSERT INTO TABLE "+taxiVPTb+
                             "\nSELECT \"STTP\",\""+time+"\",MIN(tpcount),MAX(tpcount);\n\n";
 
 //                    System.out.println(stTp);
@@ -210,13 +207,13 @@ public class sqlWrite {
                             "\nSELECT bp.BoundaryShape, count(*) cnt FROM blocksh_v1p bp\n" +
                             "JOIN "+stTb+" ts\n" +
                             "WHERE bp.objectid=ts.ctOBJECTID\n" +
-                            "GROUP BY bp.BoundaryShape;";
+                            "GROUP BY bp.BoundaryShape;\n";
                     String stAggVInsert="FROM "+stAggTb+
-                            "INSERT INTO TABLE "+taxiVPTb+
+                            "\nINSERT INTO TABLE "+taxiVPTb+
                             "\nSELECT \"STAGG\",\"\"+time+\"\",MIN(stcount),MAX(stcount);\n\n";
 
 //                    System.out.println(stTp);
-                    bw.write(stTp);
+                    bw.write(stAgg);
 //                    System.out.println(stAggVInsert);
                     bw.write(stAggVInsert);
 
@@ -245,11 +242,11 @@ public class sqlWrite {
                             "GROUP BY bin_id;\n" +
                             "\n";
                     String aggVInsert="FROM "+agg1Tb+
-                            "INSERT INTO TABLE "+taxiVPTb+
+                            "\nINSERT INTO TABLE "+taxiVPTb+
                             "\nSELECT \"AGG1\",\"185\",MIN(count),MAX(count);\n" +
                             
                             "FROM "+agg2Tb+
-                            "INSERT INTO TABLE "+taxiVPTb+
+                            "\nINSERT INTO TABLE "+taxiVPTb+
                             "\nSELECT \"AGG2\",\"185\",MIN(count),MAX(count);\n\n";
 //                    System.out.println(agg);
                     bw.write(agg);
