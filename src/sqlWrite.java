@@ -23,8 +23,8 @@ public class sqlWrite {
         int year=2015;
         int month=04;
         int day=01;
-        String taxiTbPre="taxish"+String.format("%02d",year)+String.format("%02d",month)+String.format("%02d",day)+"_";
-        String taxiTb=taxiTbPre;
+        String taxiTPre="taxish"+String.format("%02d",year)+String.format("%02d",month)+String.format("%02d",day)+"_";
+        String taxiTb=taxiTPre;
         String taxiFl="part-"+month+"."+String.format("%02d",day)+".csv";
         String preTaxi="CREATE EXTERNAL TABLE "+taxiTb+"(carId DOUBLE,isAlarm DOUBLE,isEmpty DOUBLE,topLight DOUBLE,\n" +
                 "Elevated DOUBLE,isBrake DOUBLE,receiveTime TIMESTAMP,GPSTime STRING,longitude DOUBLE,latitude DOUBLE,\n" +
@@ -35,12 +35,12 @@ public class sqlWrite {
                 "describe "+taxiTb+";\n" +
                 
                 "LOAD DATA INPATH '/taxidemo/"+taxiFl+"' OVERWRITE INTO TABLE "+taxiTb+";\n\n";
-        String taxiVTb=taxiTbPre+"value";
+        String taxiVTb=taxiTPre+"value";
         String taxiV="CREATE TABLE "+taxiVTb+"(type STRING,time STRING,min DOUBLE,max DOUBLE)\n" +
                 "ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              \n" +
                 "STORED AS INPUTFORMAT 'com.esri.json.hadoop.UnenclosedJsonInputFormat'\n" +
                 "OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat';\n";
-        String taxiVPTb=taxiTbPre+"valuep";
+        String taxiVPTb=taxiTPre+"valuep";
         String taxiVP="CREATE TABLE "+taxiVPTb+"(type STRING,time STRING,min DOUBLE,max DOUBLE);\n\n";
 
         try {
@@ -67,7 +67,7 @@ public class sqlWrite {
                     String time=String.format("%02d",hour)+minute;
 //                    System.out.println(time);
 //                    bw.write(time);
-                    String timeTb=taxiTbPre+"time"+time;
+                    String timeTb=taxiTPre+"time"+time;
                     String timeBg=new String();
                     String timeEn=new String();
                     if(minute==0){
@@ -86,16 +86,16 @@ public class sqlWrite {
                             "SELECT *\n" +
                             "WHERE taxish150401s.receiveTime < '"+timeEn+"';\n\n";
 
-                    System.out.println(timeDiv);
+//                    System.out.println(timeDiv);
                     bw.write(timeDiv);
 
                     //stOD*******************************************************************************************************************************************************************
-                    String stTb=taxiTbPre+"St"+time;
-                    String stMaxTb=taxiTbPre+"Stmax"+time;
-                    String stMinTb=taxiTbPre+"Stmin"+time;
-                    String stOdPTb=taxiTbPre+"STODp"+time;
-                    String stOdFTb=taxiTbPre+"STODf"+time;
-                    String stOdTb=taxiTbPre+"STOD"+time;
+                    String stTb=taxiTPre+"St"+time;
+                    String stMaxTb=taxiTPre+"Stmax"+time;
+                    String stMinTb=taxiTPre+"Stmin"+time;
+                    String stOdPTb=taxiTPre+"STODp"+time;
+                    String stOdFTb=taxiTPre+"STODf"+time;
+                    String stOdTb=taxiTPre+"STOD"+time;
                     String stOD="CREATE EXTERNAL TABLE "+stTb+"(carId DOUBLE,receiveTime string,longitude DOUBLE,latitude DOUBLE,ctNAME string,ctOBJECTID int,ctcx DOUBLE,ctcy DOUBLE);\n" +
                             
                             "INSERT OVERWRITE TABLE "+stTb+
@@ -154,15 +154,15 @@ public class sqlWrite {
                             "INSERT INTO TABLE "+taxiVPTb+
                             "SELECT \"STOD\",\"185\",MIN(count),MAX(count);\n\n";
 
-                    System.out.println(stOD);
+//                    System.out.println(stOD);
                     bw.write(stOD);
-                    System.out.println(odVInsert);
+//                    System.out.println(odVInsert);
                     bw.write(odVInsert);
 
                     //stTp*************************************************************************************************************************************************************
-                    String stOTb=taxiTbPre+"STO"+time;
-                    String stDTb=taxiTbPre+"STD"+time;
-                    String stTpTb=taxiTbPre+"STTP"+time;
+                    String stOTb=taxiTPre+"STO"+time;
+                    String stDTb=taxiTPre+"STD"+time;
+                    String stTpTb=taxiTPre+"STTP"+time;
                     String stTp="CREATE TABLE "+stOTb+"(OctOBJECTID int,count DOUBLE);\n" +
                             
                             "CREATE TABLE "+stDTb+"(DctOBJECTID int,count DOUBLE);\n" +
@@ -194,13 +194,13 @@ public class sqlWrite {
                             "INSERT INTO TABLE "+taxiVPTb+
                             "SELECT \"STTP\",\""+time+"\",MIN(tpcount),MAX(tpcount);\n\n";
 
-                    System.out.println(stTp);
+//                    System.out.println(stTp);
                     bw.write(stTp);
-                    System.out.println(stTpVInsert);
+//                    System.out.println(stTpVInsert);
                     bw.write(stTpVInsert);
 
                     //stagg**************************************************************************************************************************************************
-                    String stAggTb=taxiTbPre+"stagg"+time;
+                    String stAggTb=taxiTPre+"stagg"+time;
                     String stAgg="CREATE TABLE "+stAggTb+"(area BINARY, stcount DOUBLE)\n" +
                             "ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              \n" +
                             "STORED AS INPUTFORMAT 'com.esri.json.hadoop.UnenclosedJsonInputFormat'\n" +
@@ -215,15 +215,15 @@ public class sqlWrite {
                             "INSERT INTO TABLE "+taxiVPTb+
                             "SELECT \"STAGG\",\"\"+time+\"\",MIN(stcount),MAX(stcount);\n\n";
 
-                    System.out.println(stTp);
+//                    System.out.println(stTp);
                     bw.write(stTp);
-                    System.out.println(stAggVInsert);
+//                    System.out.println(stAggVInsert);
                     bw.write(stAggVInsert);
 
                     //agg***************************************************************************************************************************************************
 
-                    String agg1Tb=taxiTbPre+"agg1"+time;
-                    String agg2Tb=taxiTbPre+"agg2"+time;
+                    String agg1Tb=taxiTPre+"agg1"+time;
+                    String agg2Tb=taxiTPre+"agg2"+time;
                     String agg="CREATE TABLE "+agg1Tb+"(area BINARY, count DOUBLE)\n" +
                             "ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              \n" +
                             "STORED AS INPUTFORMAT 'com.esri.json.hadoop.UnenclosedJsonInputFormat'\n" +
@@ -251,9 +251,9 @@ public class sqlWrite {
                             "FROM "+agg2Tb+
                             "INSERT INTO TABLE "+taxiVPTb+
                             "SELECT \"AGG2\",\"185\",MIN(count),MAX(count);\n\n";
-                    System.out.println(agg);
+//                    System.out.println(agg);
                     bw.write(agg);
-                    System.out.println(aggVInsert);
+//                    System.out.println(aggVInsert);
                     bw.write(aggVInsert);
 
                 }
@@ -264,7 +264,7 @@ public class sqlWrite {
                     "SELECT * FROM "+taxiVPTb+";\n" +
                     
                     "drop table "+taxiVPTb+";\n";
-            System.out.println(valueAllInsert);
+//            System.out.println(valueAllInsert);
             bw.write(valueAllInsert);
 
             bw.close();
