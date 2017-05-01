@@ -261,7 +261,7 @@ public class sqlWrite {
 
             //value all*********************************************************************************************************************************************
             String valueAllInsert="INSERT INTO TABLE "+taxiVTb+
-                    "SELECT * FROM "+taxiVPTb+";\n" +
+                    " \nSELECT * FROM "+taxiVPTb+";\n" +
                     
                     "drop table "+taxiVPTb+";\n";
 //            System.out.println(valueAllInsert);

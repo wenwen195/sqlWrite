@@ -4538,5 +4538,6 @@ GROUP BY bin_id;
 FROM taxish20150401_agg1235INSERT INTO TABLE taxish20150401_valuepSELECT "AGG1","185",MIN(count),MAX(count);
 FROM taxish20150401_agg2235INSERT INTO TABLE taxish20150401_valuepSELECT "AGG2","185",MIN(count),MAX(count);
 
-INSERT INTO TABLE taxish20150401_valueSELECT * FROM taxish20150401_valuep;
+INSERT INTO TABLE taxish20150401_value 
+SELECT * FROM taxish20150401_valuep;
 drop table taxish20150401_valuep;
