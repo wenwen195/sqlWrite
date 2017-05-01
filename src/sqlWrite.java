@@ -149,7 +149,7 @@ public class sqlWrite {
                             "drop table "+stOdFTb+";\n";
                     String odVInsert="FROM "+stOdTb+
                             "\nINSERT INTO TABLE "+taxiVPTb+
-                            "\nSELECT \"STOD\",\"185\",MIN(count),MAX(count);\n\n";
+                            "\nSELECT \"STOD\",\""+time+"\",MIN(count),MAX(count);\n\n";
 
 //                    System.out.println(stOD);
                     bw.write(stOD);
@@ -210,7 +210,7 @@ public class sqlWrite {
                             "GROUP BY bp.BoundaryShape;\n";
                     String stAggVInsert="FROM "+stAggTb+
                             "\nINSERT INTO TABLE "+taxiVPTb+
-                            "\nSELECT \"STAGG\",\"\"+time+\"\",MIN(stcount),MAX(stcount);\n\n";
+                            "\nSELECT \"STAGG\",\""+time+"\",MIN(stcount),MAX(stcount);\n\n";
 
 //                    System.out.println(stTp);
                     bw.write(stAgg);
@@ -243,11 +243,11 @@ public class sqlWrite {
                             "\n";
                     String aggVInsert="FROM "+agg1Tb+
                             "\nINSERT INTO TABLE "+taxiVPTb+
-                            "\nSELECT \"AGG1\",\"185\",MIN(count),MAX(count);\n" +
+                            "\nSELECT \"AGG1\",\""+time+"\",MIN(count),MAX(count);\n" +
                             
                             "FROM "+agg2Tb+
                             "\nINSERT INTO TABLE "+taxiVPTb+
-                            "\nSELECT \"AGG2\",\"185\",MIN(count),MAX(count);\n\n";
+                            "\nSELECT \"AGG2\",\""+time+"\",MIN(count),MAX(count);\n\n";
 //                    System.out.println(agg);
                     bw.write(agg);
 //                    System.out.println(aggVInsert);

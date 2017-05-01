@@ -74,7 +74,7 @@ drop table taxish20150401_Stmin000;
 drop table taxish20150401_STODf000;
 FROM taxish20150401_STOD000
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","000",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO000(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD000(DctOBJECTID int,count DOUBLE);
@@ -112,7 +112,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg000
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","000",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1000(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -133,10 +133,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1000
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","000",MIN(count),MAX(count);
 FROM taxish20150401_agg2000
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","000",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time005(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time005;
@@ -186,7 +186,7 @@ drop table taxish20150401_Stmin005;
 drop table taxish20150401_STODf005;
 FROM taxish20150401_STOD005
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","005",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO005(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD005(DctOBJECTID int,count DOUBLE);
@@ -224,7 +224,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg005
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","005",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1005(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -245,10 +245,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1005
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","005",MIN(count),MAX(count);
 FROM taxish20150401_agg2005
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","005",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time010(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time010;
@@ -298,7 +298,7 @@ drop table taxish20150401_Stmin010;
 drop table taxish20150401_STODf010;
 FROM taxish20150401_STOD010
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","010",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO010(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD010(DctOBJECTID int,count DOUBLE);
@@ -336,7 +336,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg010
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","010",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1010(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -357,10 +357,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1010
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","010",MIN(count),MAX(count);
 FROM taxish20150401_agg2010
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","010",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time015(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time015;
@@ -410,7 +410,7 @@ drop table taxish20150401_Stmin015;
 drop table taxish20150401_STODf015;
 FROM taxish20150401_STOD015
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","015",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO015(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD015(DctOBJECTID int,count DOUBLE);
@@ -448,7 +448,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg015
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","015",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1015(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -469,10 +469,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1015
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","015",MIN(count),MAX(count);
 FROM taxish20150401_agg2015
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","015",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time020(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time020;
@@ -522,7 +522,7 @@ drop table taxish20150401_Stmin020;
 drop table taxish20150401_STODf020;
 FROM taxish20150401_STOD020
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","020",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO020(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD020(DctOBJECTID int,count DOUBLE);
@@ -560,7 +560,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg020
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","020",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1020(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -581,10 +581,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1020
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","020",MIN(count),MAX(count);
 FROM taxish20150401_agg2020
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","020",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time025(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time025;
@@ -634,7 +634,7 @@ drop table taxish20150401_Stmin025;
 drop table taxish20150401_STODf025;
 FROM taxish20150401_STOD025
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","025",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO025(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD025(DctOBJECTID int,count DOUBLE);
@@ -672,7 +672,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg025
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","025",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1025(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -693,10 +693,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1025
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","025",MIN(count),MAX(count);
 FROM taxish20150401_agg2025
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","025",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time030(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time030;
@@ -746,7 +746,7 @@ drop table taxish20150401_Stmin030;
 drop table taxish20150401_STODf030;
 FROM taxish20150401_STOD030
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","030",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO030(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD030(DctOBJECTID int,count DOUBLE);
@@ -784,7 +784,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg030
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","030",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1030(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -805,10 +805,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1030
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","030",MIN(count),MAX(count);
 FROM taxish20150401_agg2030
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","030",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time035(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time035;
@@ -858,7 +858,7 @@ drop table taxish20150401_Stmin035;
 drop table taxish20150401_STODf035;
 FROM taxish20150401_STOD035
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","035",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO035(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD035(DctOBJECTID int,count DOUBLE);
@@ -896,7 +896,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg035
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","035",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1035(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -917,10 +917,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1035
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","035",MIN(count),MAX(count);
 FROM taxish20150401_agg2035
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","035",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time040(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time040;
@@ -970,7 +970,7 @@ drop table taxish20150401_Stmin040;
 drop table taxish20150401_STODf040;
 FROM taxish20150401_STOD040
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","040",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO040(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD040(DctOBJECTID int,count DOUBLE);
@@ -1008,7 +1008,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg040
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","040",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1040(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -1029,10 +1029,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1040
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","040",MIN(count),MAX(count);
 FROM taxish20150401_agg2040
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","040",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time045(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time045;
@@ -1082,7 +1082,7 @@ drop table taxish20150401_Stmin045;
 drop table taxish20150401_STODf045;
 FROM taxish20150401_STOD045
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","045",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO045(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD045(DctOBJECTID int,count DOUBLE);
@@ -1120,7 +1120,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg045
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","045",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1045(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -1141,10 +1141,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1045
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","045",MIN(count),MAX(count);
 FROM taxish20150401_agg2045
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","045",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time050(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time050;
@@ -1194,7 +1194,7 @@ drop table taxish20150401_Stmin050;
 drop table taxish20150401_STODf050;
 FROM taxish20150401_STOD050
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","050",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO050(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD050(DctOBJECTID int,count DOUBLE);
@@ -1232,7 +1232,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg050
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","050",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1050(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -1253,10 +1253,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1050
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","050",MIN(count),MAX(count);
 FROM taxish20150401_agg2050
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","050",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time055(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time055;
@@ -1306,7 +1306,7 @@ drop table taxish20150401_Stmin055;
 drop table taxish20150401_STODf055;
 FROM taxish20150401_STOD055
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","055",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO055(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD055(DctOBJECTID int,count DOUBLE);
@@ -1344,7 +1344,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg055
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","055",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1055(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -1365,10 +1365,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1055
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","055",MIN(count),MAX(count);
 FROM taxish20150401_agg2055
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","055",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time060(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time060;
@@ -1418,7 +1418,7 @@ drop table taxish20150401_Stmin060;
 drop table taxish20150401_STODf060;
 FROM taxish20150401_STOD060
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","060",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO060(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD060(DctOBJECTID int,count DOUBLE);
@@ -1456,7 +1456,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg060
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","060",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1060(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -1477,10 +1477,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1060
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","060",MIN(count),MAX(count);
 FROM taxish20150401_agg2060
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","060",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time065(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time065;
@@ -1530,7 +1530,7 @@ drop table taxish20150401_Stmin065;
 drop table taxish20150401_STODf065;
 FROM taxish20150401_STOD065
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","065",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO065(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD065(DctOBJECTID int,count DOUBLE);
@@ -1568,7 +1568,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg065
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","065",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1065(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -1589,10 +1589,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1065
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","065",MIN(count),MAX(count);
 FROM taxish20150401_agg2065
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","065",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time070(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time070;
@@ -1642,7 +1642,7 @@ drop table taxish20150401_Stmin070;
 drop table taxish20150401_STODf070;
 FROM taxish20150401_STOD070
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","070",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO070(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD070(DctOBJECTID int,count DOUBLE);
@@ -1680,7 +1680,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg070
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","070",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1070(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -1701,10 +1701,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1070
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","070",MIN(count),MAX(count);
 FROM taxish20150401_agg2070
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","070",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time075(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time075;
@@ -1754,7 +1754,7 @@ drop table taxish20150401_Stmin075;
 drop table taxish20150401_STODf075;
 FROM taxish20150401_STOD075
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","075",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO075(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD075(DctOBJECTID int,count DOUBLE);
@@ -1792,7 +1792,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg075
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","075",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1075(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -1813,10 +1813,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1075
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","075",MIN(count),MAX(count);
 FROM taxish20150401_agg2075
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","075",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time080(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time080;
@@ -1866,7 +1866,7 @@ drop table taxish20150401_Stmin080;
 drop table taxish20150401_STODf080;
 FROM taxish20150401_STOD080
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","080",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO080(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD080(DctOBJECTID int,count DOUBLE);
@@ -1904,7 +1904,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg080
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","080",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1080(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -1925,10 +1925,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1080
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","080",MIN(count),MAX(count);
 FROM taxish20150401_agg2080
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","080",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time085(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time085;
@@ -1978,7 +1978,7 @@ drop table taxish20150401_Stmin085;
 drop table taxish20150401_STODf085;
 FROM taxish20150401_STOD085
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","085",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO085(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD085(DctOBJECTID int,count DOUBLE);
@@ -2016,7 +2016,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg085
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","085",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1085(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -2037,10 +2037,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1085
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","085",MIN(count),MAX(count);
 FROM taxish20150401_agg2085
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","085",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time090(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time090;
@@ -2090,7 +2090,7 @@ drop table taxish20150401_Stmin090;
 drop table taxish20150401_STODf090;
 FROM taxish20150401_STOD090
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","090",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO090(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD090(DctOBJECTID int,count DOUBLE);
@@ -2128,7 +2128,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg090
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","090",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1090(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -2149,10 +2149,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1090
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","090",MIN(count),MAX(count);
 FROM taxish20150401_agg2090
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","090",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time095(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time095;
@@ -2202,7 +2202,7 @@ drop table taxish20150401_Stmin095;
 drop table taxish20150401_STODf095;
 FROM taxish20150401_STOD095
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","095",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO095(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD095(DctOBJECTID int,count DOUBLE);
@@ -2240,7 +2240,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg095
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","095",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1095(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -2261,10 +2261,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1095
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","095",MIN(count),MAX(count);
 FROM taxish20150401_agg2095
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","095",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time100(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time100;
@@ -2314,7 +2314,7 @@ drop table taxish20150401_Stmin100;
 drop table taxish20150401_STODf100;
 FROM taxish20150401_STOD100
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","100",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO100(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD100(DctOBJECTID int,count DOUBLE);
@@ -2352,7 +2352,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg100
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","100",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1100(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -2373,10 +2373,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1100
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","100",MIN(count),MAX(count);
 FROM taxish20150401_agg2100
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","100",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time105(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time105;
@@ -2426,7 +2426,7 @@ drop table taxish20150401_Stmin105;
 drop table taxish20150401_STODf105;
 FROM taxish20150401_STOD105
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","105",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO105(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD105(DctOBJECTID int,count DOUBLE);
@@ -2464,7 +2464,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg105
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","105",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1105(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -2485,10 +2485,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1105
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","105",MIN(count),MAX(count);
 FROM taxish20150401_agg2105
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","105",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time110(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time110;
@@ -2538,7 +2538,7 @@ drop table taxish20150401_Stmin110;
 drop table taxish20150401_STODf110;
 FROM taxish20150401_STOD110
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","110",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO110(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD110(DctOBJECTID int,count DOUBLE);
@@ -2576,7 +2576,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg110
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","110",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1110(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -2597,10 +2597,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1110
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","110",MIN(count),MAX(count);
 FROM taxish20150401_agg2110
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","110",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time115(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time115;
@@ -2650,7 +2650,7 @@ drop table taxish20150401_Stmin115;
 drop table taxish20150401_STODf115;
 FROM taxish20150401_STOD115
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","115",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO115(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD115(DctOBJECTID int,count DOUBLE);
@@ -2688,7 +2688,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg115
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","115",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1115(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -2709,10 +2709,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1115
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","115",MIN(count),MAX(count);
 FROM taxish20150401_agg2115
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","115",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time120(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time120;
@@ -2762,7 +2762,7 @@ drop table taxish20150401_Stmin120;
 drop table taxish20150401_STODf120;
 FROM taxish20150401_STOD120
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","120",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO120(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD120(DctOBJECTID int,count DOUBLE);
@@ -2800,7 +2800,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg120
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","120",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1120(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -2821,10 +2821,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1120
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","120",MIN(count),MAX(count);
 FROM taxish20150401_agg2120
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","120",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time125(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time125;
@@ -2874,7 +2874,7 @@ drop table taxish20150401_Stmin125;
 drop table taxish20150401_STODf125;
 FROM taxish20150401_STOD125
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","125",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO125(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD125(DctOBJECTID int,count DOUBLE);
@@ -2912,7 +2912,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg125
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","125",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1125(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -2933,10 +2933,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1125
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","125",MIN(count),MAX(count);
 FROM taxish20150401_agg2125
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","125",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time130(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time130;
@@ -2986,7 +2986,7 @@ drop table taxish20150401_Stmin130;
 drop table taxish20150401_STODf130;
 FROM taxish20150401_STOD130
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","130",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO130(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD130(DctOBJECTID int,count DOUBLE);
@@ -3024,7 +3024,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg130
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","130",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1130(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -3045,10 +3045,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1130
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","130",MIN(count),MAX(count);
 FROM taxish20150401_agg2130
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","130",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time135(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time135;
@@ -3098,7 +3098,7 @@ drop table taxish20150401_Stmin135;
 drop table taxish20150401_STODf135;
 FROM taxish20150401_STOD135
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","135",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO135(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD135(DctOBJECTID int,count DOUBLE);
@@ -3136,7 +3136,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg135
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","135",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1135(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -3157,10 +3157,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1135
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","135",MIN(count),MAX(count);
 FROM taxish20150401_agg2135
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","135",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time140(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time140;
@@ -3210,7 +3210,7 @@ drop table taxish20150401_Stmin140;
 drop table taxish20150401_STODf140;
 FROM taxish20150401_STOD140
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","140",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO140(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD140(DctOBJECTID int,count DOUBLE);
@@ -3248,7 +3248,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg140
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","140",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1140(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -3269,10 +3269,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1140
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","140",MIN(count),MAX(count);
 FROM taxish20150401_agg2140
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","140",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time145(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time145;
@@ -3322,7 +3322,7 @@ drop table taxish20150401_Stmin145;
 drop table taxish20150401_STODf145;
 FROM taxish20150401_STOD145
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","145",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO145(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD145(DctOBJECTID int,count DOUBLE);
@@ -3360,7 +3360,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg145
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","145",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1145(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -3381,10 +3381,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1145
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","145",MIN(count),MAX(count);
 FROM taxish20150401_agg2145
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","145",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time150(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time150;
@@ -3434,7 +3434,7 @@ drop table taxish20150401_Stmin150;
 drop table taxish20150401_STODf150;
 FROM taxish20150401_STOD150
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","150",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO150(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD150(DctOBJECTID int,count DOUBLE);
@@ -3472,7 +3472,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg150
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","150",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1150(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -3493,10 +3493,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1150
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","150",MIN(count),MAX(count);
 FROM taxish20150401_agg2150
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","150",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time155(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time155;
@@ -3546,7 +3546,7 @@ drop table taxish20150401_Stmin155;
 drop table taxish20150401_STODf155;
 FROM taxish20150401_STOD155
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","155",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO155(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD155(DctOBJECTID int,count DOUBLE);
@@ -3584,7 +3584,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg155
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","155",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1155(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -3605,10 +3605,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1155
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","155",MIN(count),MAX(count);
 FROM taxish20150401_agg2155
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","155",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time160(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time160;
@@ -3658,7 +3658,7 @@ drop table taxish20150401_Stmin160;
 drop table taxish20150401_STODf160;
 FROM taxish20150401_STOD160
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","160",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO160(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD160(DctOBJECTID int,count DOUBLE);
@@ -3696,7 +3696,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg160
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","160",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1160(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -3717,10 +3717,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1160
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","160",MIN(count),MAX(count);
 FROM taxish20150401_agg2160
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","160",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time165(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time165;
@@ -3770,7 +3770,7 @@ drop table taxish20150401_Stmin165;
 drop table taxish20150401_STODf165;
 FROM taxish20150401_STOD165
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","165",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO165(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD165(DctOBJECTID int,count DOUBLE);
@@ -3808,7 +3808,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg165
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","165",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1165(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -3829,10 +3829,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1165
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","165",MIN(count),MAX(count);
 FROM taxish20150401_agg2165
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","165",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time170(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time170;
@@ -3882,7 +3882,7 @@ drop table taxish20150401_Stmin170;
 drop table taxish20150401_STODf170;
 FROM taxish20150401_STOD170
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","170",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO170(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD170(DctOBJECTID int,count DOUBLE);
@@ -3920,7 +3920,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg170
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","170",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1170(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -3941,10 +3941,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1170
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","170",MIN(count),MAX(count);
 FROM taxish20150401_agg2170
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","170",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time175(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time175;
@@ -3994,7 +3994,7 @@ drop table taxish20150401_Stmin175;
 drop table taxish20150401_STODf175;
 FROM taxish20150401_STOD175
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","175",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO175(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD175(DctOBJECTID int,count DOUBLE);
@@ -4032,7 +4032,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg175
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","175",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1175(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -4053,10 +4053,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1175
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","175",MIN(count),MAX(count);
 FROM taxish20150401_agg2175
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","175",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time180(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time180;
@@ -4106,7 +4106,7 @@ drop table taxish20150401_Stmin180;
 drop table taxish20150401_STODf180;
 FROM taxish20150401_STOD180
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","180",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO180(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD180(DctOBJECTID int,count DOUBLE);
@@ -4144,7 +4144,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg180
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","180",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1180(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -4165,10 +4165,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1180
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","180",MIN(count),MAX(count);
 FROM taxish20150401_agg2180
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","180",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time185(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time185;
@@ -4256,7 +4256,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg185
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","185",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1185(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -4330,7 +4330,7 @@ drop table taxish20150401_Stmin190;
 drop table taxish20150401_STODf190;
 FROM taxish20150401_STOD190
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","190",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO190(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD190(DctOBJECTID int,count DOUBLE);
@@ -4368,7 +4368,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg190
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","190",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1190(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -4389,10 +4389,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1190
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","190",MIN(count),MAX(count);
 FROM taxish20150401_agg2190
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","190",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time195(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time195;
@@ -4442,7 +4442,7 @@ drop table taxish20150401_Stmin195;
 drop table taxish20150401_STODf195;
 FROM taxish20150401_STOD195
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","195",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO195(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD195(DctOBJECTID int,count DOUBLE);
@@ -4480,7 +4480,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg195
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","195",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1195(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -4501,10 +4501,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1195
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","195",MIN(count),MAX(count);
 FROM taxish20150401_agg2195
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","195",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time200(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time200;
@@ -4554,7 +4554,7 @@ drop table taxish20150401_Stmin200;
 drop table taxish20150401_STODf200;
 FROM taxish20150401_STOD200
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","200",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO200(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD200(DctOBJECTID int,count DOUBLE);
@@ -4592,7 +4592,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg200
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","200",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1200(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -4613,10 +4613,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1200
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","200",MIN(count),MAX(count);
 FROM taxish20150401_agg2200
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","200",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time205(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time205;
@@ -4666,7 +4666,7 @@ drop table taxish20150401_Stmin205;
 drop table taxish20150401_STODf205;
 FROM taxish20150401_STOD205
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","205",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO205(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD205(DctOBJECTID int,count DOUBLE);
@@ -4704,7 +4704,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg205
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","205",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1205(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -4725,10 +4725,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1205
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","205",MIN(count),MAX(count);
 FROM taxish20150401_agg2205
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","205",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time210(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time210;
@@ -4778,7 +4778,7 @@ drop table taxish20150401_Stmin210;
 drop table taxish20150401_STODf210;
 FROM taxish20150401_STOD210
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","210",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO210(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD210(DctOBJECTID int,count DOUBLE);
@@ -4816,7 +4816,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg210
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","210",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1210(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -4837,10 +4837,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1210
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","210",MIN(count),MAX(count);
 FROM taxish20150401_agg2210
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","210",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time215(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time215;
@@ -4890,7 +4890,7 @@ drop table taxish20150401_Stmin215;
 drop table taxish20150401_STODf215;
 FROM taxish20150401_STOD215
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","215",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO215(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD215(DctOBJECTID int,count DOUBLE);
@@ -4928,7 +4928,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg215
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","215",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1215(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -4949,10 +4949,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1215
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","215",MIN(count),MAX(count);
 FROM taxish20150401_agg2215
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","215",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time220(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time220;
@@ -5002,7 +5002,7 @@ drop table taxish20150401_Stmin220;
 drop table taxish20150401_STODf220;
 FROM taxish20150401_STOD220
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","220",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO220(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD220(DctOBJECTID int,count DOUBLE);
@@ -5040,7 +5040,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg220
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","220",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1220(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -5061,10 +5061,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1220
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","220",MIN(count),MAX(count);
 FROM taxish20150401_agg2220
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","220",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time225(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time225;
@@ -5114,7 +5114,7 @@ drop table taxish20150401_Stmin225;
 drop table taxish20150401_STODf225;
 FROM taxish20150401_STOD225
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","225",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO225(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD225(DctOBJECTID int,count DOUBLE);
@@ -5152,7 +5152,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg225
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","225",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1225(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -5173,10 +5173,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1225
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","225",MIN(count),MAX(count);
 FROM taxish20150401_agg2225
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","225",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time230(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time230;
@@ -5226,7 +5226,7 @@ drop table taxish20150401_Stmin230;
 drop table taxish20150401_STODf230;
 FROM taxish20150401_STOD230
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","230",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO230(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD230(DctOBJECTID int,count DOUBLE);
@@ -5264,7 +5264,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg230
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","230",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1230(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -5285,10 +5285,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1230
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","230",MIN(count),MAX(count);
 FROM taxish20150401_agg2230
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","230",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_time235(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);
 describe taxish20150401_time235;
@@ -5338,7 +5338,7 @@ drop table taxish20150401_Stmin235;
 drop table taxish20150401_STODf235;
 FROM taxish20150401_STOD235
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STOD","185",MIN(count),MAX(count);
+SELECT "STOD","235",MIN(count),MAX(count);
 
 CREATE TABLE taxish20150401_STO235(OctOBJECTID int,count DOUBLE);
 CREATE TABLE taxish20150401_STD235(DctOBJECTID int,count DOUBLE);
@@ -5376,7 +5376,7 @@ WHERE bp.objectid=ts.ctOBJECTID
 GROUP BY bp.BoundaryShape;
 FROM taxish20150401_stagg235
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "STAGG",""+time+"",MIN(stcount),MAX(stcount);
+SELECT "STAGG","235",MIN(stcount),MAX(stcount);
 
 CREATE TABLE taxish20150401_agg1235(area BINARY, count DOUBLE)
 ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              
@@ -5397,10 +5397,10 @@ GROUP BY bin_id;
 
 FROM taxish20150401_agg1235
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG1","185",MIN(count),MAX(count);
+SELECT "AGG1","235",MIN(count),MAX(count);
 FROM taxish20150401_agg2235
 INSERT INTO TABLE taxish20150401_valuep
-SELECT "AGG2","185",MIN(count),MAX(count);
+SELECT "AGG2","235",MIN(count),MAX(count);
 
 INSERT INTO TABLE taxish20150401_value 
 SELECT * FROM taxish20150401_valuep;
