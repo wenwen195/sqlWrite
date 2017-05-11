@@ -14,7 +14,7 @@ public class dropAllTable {
             String str = null;
 
             while ((str = br.readLine()) != null) {
-                sb.append("DROP TABLE " + str + ";\n");
+                sb.append("DROP TABLE IF EXISTS " + str + ";\n");
 
                 System.out.println(str);
             }
