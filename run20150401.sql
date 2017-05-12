@@ -58,7 +58,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin000
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp000;
-CREATE TABLE taxish20150401_STODp000(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp000(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin000 tmin,taxish20150401_Stmax000 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp000
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -178,7 +178,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin005
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp005;
-CREATE TABLE taxish20150401_STODp005(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp005(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin005 tmin,taxish20150401_Stmax005 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp005
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -298,7 +298,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin010
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp010;
-CREATE TABLE taxish20150401_STODp010(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp010(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin010 tmin,taxish20150401_Stmax010 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp010
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -418,7 +418,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin015
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp015;
-CREATE TABLE taxish20150401_STODp015(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp015(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin015 tmin,taxish20150401_Stmax015 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp015
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -538,7 +538,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin020
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp020;
-CREATE TABLE taxish20150401_STODp020(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp020(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin020 tmin,taxish20150401_Stmax020 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp020
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -658,7 +658,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin025
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp025;
-CREATE TABLE taxish20150401_STODp025(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp025(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin025 tmin,taxish20150401_Stmax025 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp025
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -778,7 +778,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin030
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp030;
-CREATE TABLE taxish20150401_STODp030(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp030(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin030 tmin,taxish20150401_Stmax030 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp030
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -898,7 +898,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin035
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp035;
-CREATE TABLE taxish20150401_STODp035(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp035(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin035 tmin,taxish20150401_Stmax035 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp035
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -1018,7 +1018,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin040
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp040;
-CREATE TABLE taxish20150401_STODp040(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp040(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin040 tmin,taxish20150401_Stmax040 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp040
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -1138,7 +1138,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin045
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp045;
-CREATE TABLE taxish20150401_STODp045(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp045(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin045 tmin,taxish20150401_Stmax045 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp045
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -1258,7 +1258,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin050
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp050;
-CREATE TABLE taxish20150401_STODp050(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp050(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin050 tmin,taxish20150401_Stmax050 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp050
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -1378,7 +1378,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin055
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp055;
-CREATE TABLE taxish20150401_STODp055(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp055(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin055 tmin,taxish20150401_Stmax055 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp055
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -1498,7 +1498,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin060
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp060;
-CREATE TABLE taxish20150401_STODp060(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp060(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin060 tmin,taxish20150401_Stmax060 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp060
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -1618,7 +1618,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin065
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp065;
-CREATE TABLE taxish20150401_STODp065(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp065(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin065 tmin,taxish20150401_Stmax065 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp065
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -1738,7 +1738,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin070
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp070;
-CREATE TABLE taxish20150401_STODp070(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp070(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin070 tmin,taxish20150401_Stmax070 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp070
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -1858,7 +1858,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin075
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp075;
-CREATE TABLE taxish20150401_STODp075(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp075(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin075 tmin,taxish20150401_Stmax075 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp075
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -1978,7 +1978,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin080
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp080;
-CREATE TABLE taxish20150401_STODp080(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp080(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin080 tmin,taxish20150401_Stmax080 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp080
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -2098,7 +2098,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin085
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp085;
-CREATE TABLE taxish20150401_STODp085(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp085(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin085 tmin,taxish20150401_Stmax085 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp085
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -2218,7 +2218,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin090
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp090;
-CREATE TABLE taxish20150401_STODp090(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp090(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin090 tmin,taxish20150401_Stmax090 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp090
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -2338,7 +2338,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin095
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp095;
-CREATE TABLE taxish20150401_STODp095(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp095(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin095 tmin,taxish20150401_Stmax095 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp095
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -2458,7 +2458,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin100
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp100;
-CREATE TABLE taxish20150401_STODp100(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp100(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin100 tmin,taxish20150401_Stmax100 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp100
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -2578,7 +2578,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin105
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp105;
-CREATE TABLE taxish20150401_STODp105(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp105(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin105 tmin,taxish20150401_Stmax105 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp105
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -2698,7 +2698,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin110
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp110;
-CREATE TABLE taxish20150401_STODp110(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp110(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin110 tmin,taxish20150401_Stmax110 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp110
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -2818,7 +2818,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin115
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp115;
-CREATE TABLE taxish20150401_STODp115(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp115(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin115 tmin,taxish20150401_Stmax115 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp115
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -2938,7 +2938,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin120
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp120;
-CREATE TABLE taxish20150401_STODp120(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp120(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin120 tmin,taxish20150401_Stmax120 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp120
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -3058,7 +3058,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin125
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp125;
-CREATE TABLE taxish20150401_STODp125(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp125(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin125 tmin,taxish20150401_Stmax125 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp125
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -3178,7 +3178,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin130
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp130;
-CREATE TABLE taxish20150401_STODp130(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp130(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin130 tmin,taxish20150401_Stmax130 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp130
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -3298,7 +3298,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin135
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp135;
-CREATE TABLE taxish20150401_STODp135(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp135(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin135 tmin,taxish20150401_Stmax135 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp135
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -3418,7 +3418,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin140
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp140;
-CREATE TABLE taxish20150401_STODp140(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp140(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin140 tmin,taxish20150401_Stmax140 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp140
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -3538,7 +3538,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin145
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp145;
-CREATE TABLE taxish20150401_STODp145(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp145(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin145 tmin,taxish20150401_Stmax145 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp145
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -3658,7 +3658,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin150
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp150;
-CREATE TABLE taxish20150401_STODp150(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp150(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin150 tmin,taxish20150401_Stmax150 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp150
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -3778,7 +3778,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin155
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp155;
-CREATE TABLE taxish20150401_STODp155(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp155(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin155 tmin,taxish20150401_Stmax155 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp155
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -3898,7 +3898,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin160
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp160;
-CREATE TABLE taxish20150401_STODp160(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp160(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin160 tmin,taxish20150401_Stmax160 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp160
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -4018,7 +4018,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin165
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp165;
-CREATE TABLE taxish20150401_STODp165(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp165(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin165 tmin,taxish20150401_Stmax165 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp165
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -4138,7 +4138,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin170
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp170;
-CREATE TABLE taxish20150401_STODp170(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp170(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin170 tmin,taxish20150401_Stmax170 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp170
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -4258,7 +4258,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin175
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp175;
-CREATE TABLE taxish20150401_STODp175(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp175(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin175 tmin,taxish20150401_Stmax175 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp175
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -4378,7 +4378,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin180
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp180;
-CREATE TABLE taxish20150401_STODp180(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp180(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin180 tmin,taxish20150401_Stmax180 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp180
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -4498,7 +4498,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin185
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp185;
-CREATE TABLE taxish20150401_STODp185(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp185(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin185 tmin,taxish20150401_Stmax185 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp185
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -4618,7 +4618,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin190
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp190;
-CREATE TABLE taxish20150401_STODp190(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp190(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin190 tmin,taxish20150401_Stmax190 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp190
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -4738,7 +4738,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin195
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp195;
-CREATE TABLE taxish20150401_STODp195(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp195(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin195 tmin,taxish20150401_Stmax195 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp195
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -4858,7 +4858,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin200
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp200;
-CREATE TABLE taxish20150401_STODp200(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp200(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin200 tmin,taxish20150401_Stmax200 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp200
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -4978,7 +4978,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin205
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp205;
-CREATE TABLE taxish20150401_STODp205(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp205(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin205 tmin,taxish20150401_Stmax205 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp205
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -5098,7 +5098,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin210
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp210;
-CREATE TABLE taxish20150401_STODp210(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp210(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin210 tmin,taxish20150401_Stmax210 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp210
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -5218,7 +5218,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin215
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp215;
-CREATE TABLE taxish20150401_STODp215(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp215(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin215 tmin,taxish20150401_Stmax215 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp215
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -5338,7 +5338,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin220
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp220;
-CREATE TABLE taxish20150401_STODp220(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp220(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin220 tmin,taxish20150401_Stmax220 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp220
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -5458,7 +5458,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin225
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp225;
-CREATE TABLE taxish20150401_STODp225(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp225(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin225 tmin,taxish20150401_Stmax225 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp225
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -5578,7 +5578,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin230
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp230;
-CREATE TABLE taxish20150401_STODp230(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp230(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin230 tmin,taxish20150401_Stmax230 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp230
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count
@@ -5698,7 +5698,7 @@ INSERT OVERWRITE TABLE taxish20150401_Stmin235
 SELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min
 WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);
 DROP TABLE IF EXISTS taxish20150401_STODp235;
-CREATE TABLE taxish20150401_STODp235(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)
+CREATE TABLE taxish20150401_STODp235(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);
 FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM taxish20150401_Stmin235 tmin,taxish20150401_Stmax235 tmax WHERE tmin.carId=tmax.carId) tod
 INSERT OVERWRITE TABLE taxish20150401_STODp235
 SELECT tod.OctOBJECTID,tod.Octcx,tod.Octcy,tod.DctOBJECTID,tod.Dctcx,tod.Dctcy, COUNT(*) count

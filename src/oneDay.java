@@ -120,7 +120,7 @@ public class oneDay {
                             "WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);\n" +
 
                             "DROP TABLE IF EXISTS " +stOdPTb+";\n"+
-                            "CREATE TABLE "+stOdPTb+"(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE)\n" +
+                            "CREATE TABLE "+stOdPTb+"(OctOBJECTID int,Octcx DOUBLE,Octcy DOUBLE,DctOBJECTID int,Dctcx DOUBLE,Dctcy DOUBLE,count DOUBLE);\n" +
 
                             "FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmin.ctcx Octcx,tmin.ctcy Octcy,tmax.ctOBJECTID DctOBJECTID,tmax.ctcx Dctcx,tmax.ctcy Dctcy FROM "+stMinTb+" tmin,"+stMaxTb+" tmax WHERE tmin.carId=tmax.carId) tod\n" +
                             "INSERT OVERWRITE TABLE "+stOdPTb+
