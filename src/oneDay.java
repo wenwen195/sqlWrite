@@ -3,6 +3,8 @@ import java.io.*;
 /**
  * Created by ryw on 2017/5/3.
  */
+//循环半小时的HiveSql输出一天的出租车四种分析sql语句，输出文件runxxxx(日期).sql。HiveSQL注释见run-Oneday注释.sql
+//sttpn和staggn是改进后输出街区ID不输出边界点的数据库，看需要取用，但sttpn需要sttp的结果，不能直接注释sttp，需要加一句drop如果不要原街区结果
 public class oneDay {
     public void runOneDay(int year,int month,int day){
         String addjar="add jar\n" +
@@ -39,10 +41,16 @@ public class oneDay {
                 "CREATE EXTERNAL TABLE "+taxiVTb+"(p STRING,m STRING,n DOUBLE,x DOUBLE)\n" +
                 "ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'\n" +
                 "STORED AS textfile;\n";
-        String taxiVPTb=taxiTPre+"valuep";
+        String taxiVPTb=taxiTPre+"valuepp";
         String taxiVP="DROP TABLE IF EXISTS " +taxiVPTb+";\n"+
-                "CREATE TABLE "+taxiVPTb+"(type STRING,time STRING,min DOUBLE,max DOUBLE);\n\n";
-
+                "CREATE TABLE "+taxiVPTb+"(time STRING,c DOUBLE);\n\n";
+//        type STRING,time STRING,min DOUBLE,max DOUBLE
+        String taxiVFTb=taxiTPre+"valuep";
+        String taxiVp="CREATE TABLE "+taxiVFTb+"(p STRING,m STRING,n DOUBLE,x DOUBLE)\n" +
+                "ROW FORMAT delimited fields terminated by ',' STORED AS textfile;\n" +
+                "FROM "+taxiVTb+"\n" +
+                "INSERT OVERWRITE TABLE "+taxiVFTb+"\n" +
+                "SELECT * ;";
         try {
             FileWriter writer = new FileWriter("run"+String.format("%02d",year)+String.format("%02d",month)+String.format("%02d",day)+".sql");
             BufferedWriter bw = new BufferedWriter(writer);
@@ -50,7 +58,7 @@ public class oneDay {
 //            System.out.print(addjar);
             bw.write(addjar);
 //            System.out.print(preBlock);
-            bw.write(preBlock);
+//            bw.write(preBlock);
 //            System.out.println(preTaxi);
             bw.write(preTaxi);
 //            System.out.println(taxiV);
@@ -59,6 +67,7 @@ public class oneDay {
             bw.write(taxiVP);
 //            System.out.println();
 //            bw.write();
+//            bw.write(taxiVp);
 
             //24小时 每半小时一分
             for (int hour=0;hour<24;hour++){
@@ -66,7 +75,6 @@ public class oneDay {
                     //原数据时间分割转存 Day divide****************************************************************************************************************************
                     String time=String.format("%02d",hour)+minute;
 //                    System.out.println(time);
-//                    bw.write(time);
                     String timeTb=taxiTPre+"time"+time;
                     String timeBg=new String();
                     String timeEn=new String();
@@ -79,10 +87,10 @@ public class oneDay {
                     }
                     String timeDiv="DROP TABLE IF EXISTS " +timeTb+";\n"+
                             "CREATE TABLE "+timeTb+"(carId DOUBLE,receiveTime TIMESTAMP,longitude DOUBLE,latitude DOUBLE);\n" +
-                            "FROM (SELECT carId,receiveTime,longitude,latitude FROM "+taxiTb+" WHERE "+taxiTb+".receiveTime > '"+timeBg+"') taxish150401s\n" +
+                            "FROM (SELECT carId,receiveTime,longitude,latitude FROM "+taxiTb+" WHERE "+taxiTb+".receiveTime > '"+timeBg+"') taxishs\n" +
                             "INSERT OVERWRITE TABLE "+timeTb+
                             "\nSELECT *\n" +
-                            "WHERE taxish150401s.receiveTime < '"+timeEn+"';\n\n";
+                            "WHERE taxishs.receiveTime < '"+timeEn+"';\n\n";
 
 //                    System.out.println(timeDiv);
                     bw.write(timeDiv);
@@ -151,6 +159,9 @@ public class oneDay {
                     String odVInsert="FROM "+stOdTb+
                             "\nINSERT INTO TABLE "+taxiVPTb+
                             "\nSELECT \"STOD\",\""+time+"\",MIN(c),MAX(c);\n\n";
+                    String stVInsert="FROM "+stOdTb+
+                            "\nINSERT INTO TABLE "+taxiVPTb+
+                            "\nSELECT \"STOD\",\""+time+"\",MIN(c),MAX(c);\n\n";
 
 //                    System.out.println(stOD);
                     bw.write(stOD);
@@ -161,6 +172,7 @@ public class oneDay {
                     String stOTb=taxiTPre+"STO"+time;
                     String stDTb=taxiTPre+"STD"+time;
                     String stTpTb=taxiTPre+"STTP"+time;
+                    String stTpTbN=taxiTPre+"STTPn"+time;
                     String stTp="DROP TABLE IF EXISTS " +stOTb+";\n"+
                             "CREATE TABLE "+stOTb+"(OctOBJECTID int,count DOUBLE);\n" +
                             "DROP TABLE IF EXISTS " +stDTb+";\n"+
@@ -190,17 +202,28 @@ public class oneDay {
                             "drop table "+stOTb+";\n" +
                             "drop table "+stDTb+";\n" +
                             "drop table "+stOdPTb+";\n";
-                    String stTpVInsert="FROM "+stTpTb+
+                    String stTpN="DROP TABLE IF EXISTS "+stTpTbN+";\n" +
+                            "CREATE TABLE "+stTpTbN+"(i string,c DOUBLE)\n" +
+                            "ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'\n" +
+                            "STORED AS textfile;\n" +
+                            "FROM "+stTpTb+" a, blocksh_v1p b\n" +
+                            "INSERT OVERWRITE TABLE "+stTpTbN+"\n" +
+                            "SELECT distinct b.OBJECTID,a.c\n" +
+                            "WHERE b.BoundaryShape=a.area;";
+                    String stTpVInsert="FROM "+stTb+
                             "\nINSERT INTO TABLE "+taxiVPTb+
-                            "\nSELECT \"STTP\",\""+time+"\",MIN(c),MAX(c);\n\n";
+                            "\nSELECT \""+time+"\",COUNT(*);\n\n";
 
 //                    System.out.println(stTp);
                     bw.write(stTp);
 //                    System.out.println(stTpVInsert);
-                    bw.write(stTpVInsert);
+//                    bw.write(stTpVInsert);
+                    bw.write(stTpN);
+//                    bw.write(stTpVInsert);
 
                     //stagg**************************************************************************************************************************************************
                     String stAggTb=taxiTPre+"stagg"+time;
+                    String stAggTbN=taxiTPre+"staggn"+time;
                     String stAgg="DROP TABLE IF EXISTS " +stAggTb+";\n"+
                             "CREATE TABLE "+stAggTb+"(area BINARY, c DOUBLE)\n" +
                             "ROW FORMAT SERDE 'com.esri.hadoop.hive.serde.JsonSerde'              \n" +
@@ -212,6 +235,15 @@ public class oneDay {
                             "JOIN "+stTb+" ts\n" +
                             "WHERE bp.objectid=ts.ctOBJECTID\n" +
                             "GROUP BY bp.BoundaryShape;\n";
+                    String stAggN="DROP TABLE IF EXISTS " +stAggTbN+";\n" +
+                            "CREATE TABLE " +stAggTbN+"(i string, c DOUBLE)\n" +
+                            "ROW FORMAT SERDE 'org.openx.data.jsonserde.JsonSerDe'\n" +
+                            "STORED AS textfile;\n" +
+                            "INSERT OVERWRITE TABLE "+stAggTbN+"\n" +
+                            "SELECT bp.objectid, count(*) cnt FROM blocksh_v1p bp\n" +
+                            "JOIN "+ stTb+" ts\n" +
+                            "WHERE bp.objectid=ts.ctOBJECTID\n" +
+                            "GROUP BY bp.objectid;\n";
                     String stAggVInsert="FROM "+stAggTb+
                             "\nINSERT INTO TABLE "+taxiVPTb+
                             "\nSELECT \"STAGG\",\""+time+"\",MIN(c),MAX(c);\n\n";
@@ -219,7 +251,8 @@ public class oneDay {
 //                    System.out.println(stTp);
                     bw.write(stAgg);
 //                    System.out.println(stAggVInsert);
-                    bw.write(stAggVInsert);
+//                    bw.write(stAggVInsert);
+                    bw.write(stAggN);
 
                     //agg***************************************************************************************************************************************************
 
@@ -258,7 +291,60 @@ public class oneDay {
                     bw.write(agg);
 //                    System.out.println(aggVInsert);
                     bw.write(aggVInsert);
+                    //for show*******************************************************************************************************************************************************
+                    String stTpTbP=taxiTPre+"STTPp"+time;
+                    String stAggTbP=taxiTPre+"staggp"+time;
+                    String forPaper="CREATE TABLE "+stTpTbP+"(name STRING,c DOUBLE)\n" +
+                            "ROW FORMAT delimited fields terminated by ',' STORED AS textfile;\n" +
+                            "FROM "+stTpTb+" a, blocksh_v1p b\n" +
+                            "INSERT OVERWRITE TABLE "+stTpTbP+"\n" +
+                            "SELECT b.Name,a.c\n" +
+                            "WHERE b.BoundaryShape=a.area;\n" +
+                            "\n" +
+                            "CREATE TABLE "+stAggTbP+"(name STRING, c DOUBLE)\n" +
+                            "ROW FORMAT delimited fields terminated by ',' STORED AS textfile;\n" +
+                            "FROM "+stAggTb+" a, blocksh_v1p b\n" +
+                            "INSERT OVERWRITE TABLE "+stAggTbP+"\n" +
+                            "SELECT b.Name,a.c\n" +
+                            "WHERE b.BoundaryShape=a.area;\n\n";
+                    String stODP="DROP TABLE IF EXISTS " +stMaxTb+";\n"+
+                            "CREATE TABLE "+stMaxTb+"(carId DOUBLE,ctOBJECTID int,ctcx DOUBLE,ctcy DOUBLE,max int)\n" +
+                            "ROW FORMAT delimited fields terminated by ',' STORED AS textfile;\n" +
+                            "DROP TABLE IF EXISTS " +stMinTb+";\n"+
+                            "CREATE TABLE "+stMinTb+"(carId DOUBLE,ctOBJECTID int,ctcx DOUBLE,ctcy DOUBLE,min int)\n" +
+                            "ROW FORMAT delimited fields terminated by ',' STORED AS textfile;\n" +
 
+                            "FROM(SELECT t.carId carId,MAX(unix_timestamp(t.receiveTime)) max FROM "+stTb+" t GROUP BY t.carId) ts,"+stTb+" t\n" +
+                            "INSERT OVERWRITE TABLE "+stMaxTb+
+                            "\nSELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.max\n" +
+                            "WHERE t.carId=ts.carId and ts.max=unix_timestamp(t.receiveTime);\n" +
+
+                            "FROM(SELECT t.carId carId,MIN(unix_timestamp(t.receiveTime)) min FROM "+stTb+" t GROUP BY t.carId) ts,"+stTb+" t\n" +
+                            "INSERT OVERWRITE TABLE "+stMinTb+
+                            "\nSELECT distinct t.carId,t.ctOBJECTID,t.ctcx,t.ctcy,ts.min\n" +
+                            "WHERE t.carId=ts.carId and ts.min=unix_timestamp(t.receiveTime);\n" +
+
+                            "DROP TABLE IF EXISTS " +stOdPTb+";\n"+
+                            "CREATE TABLE "+stOdPTb+"(OctOBJECTID int,DctOBJECTID int,count DOUBLE)\n" +
+                            "ROW FORMAT delimited fields terminated by ',' STORED AS textfile;\n" +
+
+                            "FROM(SELECT distinct tmin.carId carId,tmin.ctOBJECTID OctOBJECTID,tmax.ctOBJECTID DctOBJECTID FROM "+stMinTb+" tmin,"+stMaxTb+" tmax WHERE tmin.carId=tmax.carId) tod\n" +
+                            "INSERT OVERWRITE TABLE "+stOdPTb+
+                            "\nSELECT tod.OctOBJECTID,tod.DctOBJECTID,COUNT(*) count\n" +
+                            "GROUP BY tod.OctOBJECTID,tod.DctOBJECTID;\n" +
+
+                            "DROP TABLE IF EXISTS " +stOdFTb+";\n"+
+                            "CREATE TABLE "+stOdFTb+"(OctOBJECTID int,DctOBJECTID int,count DOUBLE)\n" +
+                            "ROW FORMAT delimited fields terminated by ',' STORED AS textfile;\n" +
+
+                            "INSERT OVERWRITE TABLE "+stOdFTb+
+                            "\nSELECT od1.OctOBJECTID,od1.DctOBJECTID,od1.od1.count-od2.count\n" +
+                            "FROM "+stOdPTb+" od1 JOIN "+stOdPTb+" od2\n" +
+                            "WHERE od1.OctOBJECTID=od2.DctOBJECTID and od1.DctOBJECTID=od2.OctOBJECTID;\n";
+//                    bw.write(stODP);
+                            ;
+
+//                   bw.write(forPaper);
                 }
             }
 
@@ -267,8 +353,11 @@ public class oneDay {
                     " \nSELECT * FROM "+taxiVPTb+";\n" +
 
                     "drop table "+taxiVPTb+";\n";
+            String valuePP="INSERT OVERWRITE TABLE "+taxiVPTb+
+                    " \nSELECT * FROM "+taxiVPTb+";\n";
 //            System.out.println(valueAllInsert);
             bw.write(valueAllInsert);
+//            bw.write(valuePP);
 
             bw.close();
             writer.close();
